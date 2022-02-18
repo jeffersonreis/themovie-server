@@ -2,10 +2,12 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  margin-top: 90px;
 }
 
 .bottom {
   position: relative;
+  display: flex;
 }
 
 @media (min-width: 1093px) {
@@ -18,25 +20,28 @@
   width: 100%;
   min-height: 100px;
   object-fit: cover;
+  margin-bottom: 0;
 }
 
 .mark {
   width: 100%;
   position: absolute;
-  bottom: 0;
+  bottom: 10px;
   text-align: center;
-  margin-bottom: 10px;
 }
 
 .socialIncon {
-  width: 40px;
+  width: 45px;
   margin-right: 20px;
   cursor: pointer;
   border-radius: 4em;
+  transform: scale(0.9);
+  transition: all ease 0.2s;
+  user-select: none;  
 }
 
 .socialIncon:hover {
-  width: 45px;
+  transform: scale(1.1);
 }
 
 .gridContainer {
@@ -106,7 +111,6 @@
 .gridBox h3 {
   margin-bottom: 10px;
   color: var(--color-yellow);
-  font-size: 24px;
 }
 
 .links {

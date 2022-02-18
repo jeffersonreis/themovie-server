@@ -1,20 +1,19 @@
 import React, { useEffect, useState } from "react";
-import styles from "./home.module.css";
+import styles from "./series.module.css";
 import MovieRow from "../../components/Shared/MovieRow";
 import Menu from "../../components/Shared/Menu";
 import FeaturedMovie from "../../components/Shared/FeaturedMovie/index";
-import Footer from "../../components/Shared/Footer"
 import TMDB from "../../components/TMDB";
-import Head from "next/head";
+import Footer from "../../components/Shared/Footer"
 
-export default function Home() {
+export default function Movies() {
   const [movieList, setMovieList] = useState([]);
   const [featuredData, setFeaturedData] = useState(null);
 
   useEffect(() => {
     const loadAll = async () => {
       // pegando todas as listas
-      let list = await TMDB.getHomeList();
+      let list = await TMDB.getSerieList();
       setMovieList(list);
 
       //pegando destaque (featured)
@@ -29,11 +28,6 @@ export default function Home() {
   }, []);
 
   return (
-  <>
-    <Head>
-      <title>Home | The Movie</title>
-      <meta property="og:title" content="Home The Movie" key="title" />
-    </Head>
     <div className={styles.container}>
       <Menu className={styles.menu} />
 
@@ -48,6 +42,5 @@ export default function Home() {
       </section>
       <Footer />
     </div>
-  </>
   );
 }
